@@ -1,0 +1,13 @@
+services:
+  golden-raspberry-award-api:
+    image: golden-raspberry-award-api
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: ./GoldenRaspberryAward.Api/Dockerfile
+    environment:
+      - Logging__LogLevel__Default=Information
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5051:8080"
+      - "5052:8081"
