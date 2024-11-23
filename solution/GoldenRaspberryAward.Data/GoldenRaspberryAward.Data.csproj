@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Seed\movieList.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Seed\movieList.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0" />
+  </ItemGroup>
+
+	<!--<Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+		<Copy SourceFiles="Seed\movieList.csv" DestinationFolder="$(OutDir)\GoldenRaspberryAward.Data" />
+	</Target>-->
+
+</Project>
